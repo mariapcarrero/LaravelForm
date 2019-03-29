@@ -57,6 +57,11 @@
 						<input class="input100" type="text" name="lastname" pattern="[A-Za-z]+" title="El apellido solo debe tener letras" required>
 						<span class="focus-input100" data-placeholder="Apellido"></span>
 					</div>
+					<!-- age -->
+					<div class="wrap-input100" data-validate = "Valid email is: a@b.c">
+						<input class="input100" type="text" name="age" pattern="^[0-9]{1,3}$" title="La edad solo debe tener numeros y no mas de tres numeros" required>
+						<span class="focus-input100" data-placeholder="Edad"></span>
+					</div>
 					<!-- email -->
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="email" name="email" title="Recuerda que el correo debe ser a@b.c" required>
@@ -86,15 +91,7 @@
 					<strong>{{$message}}</strong>
 					</div>
 					@endif	
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
 
-						<a class="txt2" href="#">
-							Sign Up
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>

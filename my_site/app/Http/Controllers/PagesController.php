@@ -33,6 +33,7 @@ class PagesController extends Controller{
       if($request->input('editid') !=null ){
         $name = $request->input('name');
         $lastname = $request->input('lastname');
+        $age = $request->input('age');
         $email = $request->input('email');
         $password = $request->input('password');
         $editid = $request->input('editid');
@@ -50,18 +51,17 @@ class PagesController extends Controller{
       }else{ // Insert record
 	        $name = $request->input('name');
 	        $lastname = $request->input('lastname');
+	        $age = $request->input('age');
 	        $email = $request->input('email');
 	        $password = $request->input('password');
 
-         if($name !='' && $lastname !='' && $email != '' && $password != ''){
-            $data = array('name'=>$name,"lastname"=>$lastname,"email"=>$email,"password"=>$password);
+         if($name !='' && $lastname !='' && $age != '' && $email != '' && $password != ''){
+            $data = array('name'=>$name,"lastname"=>$lastname,"age"=>$age,"email"=>$email,"password"=>$password);
  
             // Insert
             $value = Page::insertData($data);
             if($value){
-              Session::flash('message','Bienvenido(a), '. $name);
-            	//return redirect('my_site/resources/viewsvi')-> with('message','Bienvenido, '. $name);
-            	//$message = "Bienvenido, ". $name; 
+              Session::flash('message','Bienvenido, '. $name);
             }
             else{
               Session::flash('message','El correo ya está en uso.');
