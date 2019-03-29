@@ -61,7 +61,7 @@ class PagesController extends Controller{
             // Insert
             $value = Page::insertData($data);
             if($value){
-              Session::flash('message','Bienvenido, '. $name);
+              Session::flash('message','Bienvenido, '. $name . $lastname);
             }
             else{
               Session::flash('message','El correo ya está en uso.');
